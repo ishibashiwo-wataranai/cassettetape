@@ -11,7 +11,7 @@
   html, body {
     width: 100%; height: 100%;
     overflow: hidden;
-    background: #e8e4dc;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 20%, #fbc2eb 40%, #a1c4fd 60%, #c2e9fb 80%, #d4fc79 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,7 @@
     width: var(--w);
     height: calc(var(--w) * 3 / 4);
     display: flex;
-    background: #f0ece2;
+    background: #fffaf0;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 16px 48px rgba(0,0,0,0.35);
@@ -35,8 +35,8 @@
   ============================================= */
   .player-panel {
     flex: 3;
-    background: linear-gradient(160deg, #ddd8ce 0%, #c8c2b6 100%);
-    border-right: 3px solid #b0a898;
+    background: linear-gradient(160deg, #ffe066 0%, #ff9f68 55%, #ff6b9d 100%);
+    border-right: 3px solid #ff6b9d;
     display: flex;
     flex-direction: column;
     padding: clamp(10px, 1.8vw, 18px);
@@ -49,18 +49,18 @@
     text-align: center;
     font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 700;
-    color: #2a2018;
+    color: #fff;
     letter-spacing: 0.3em;
     flex-shrink: 0;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+    text-shadow: 2px 2px 0 #c2185b;
   }
 
   /* カセットベイ（デッキ本体） */
   .cassette-bay {
     flex-shrink: 0;
-    background: linear-gradient(160deg, #c0bab2 0%, #a8a49c 100%);
+    background: linear-gradient(160deg, #4dd0e1 0%, #3a86ff 100%);
     border-radius: 10px;
-    border: 2px solid #a0988e;
+    border: 2px solid #2962c9;
     box-shadow:
       0 3px 8px rgba(0,0,0,0.25),
       inset 0 1px 0 rgba(255,255,255,0.5);
@@ -74,7 +74,7 @@
   .bay-brand {
     font-size: clamp(0.55rem, 1vw, 0.75rem);
     font-weight: 700;
-    color: #5a5248;
+    color: #fff;
     letter-spacing: 0.25em;
     text-align: right;
     padding-right: 4px;
@@ -82,9 +82,9 @@
 
   /* カセット窓 */
   .slot-window {
-    background: #1a1510;
+    background: #241a3a;
     border-radius: 6px;
-    border: 3px solid #8a847c;
+    border: 3px solid #1e4fa8;
     box-shadow:
       inset 0 4px 14px rgba(0,0,0,0.95),
       inset 0 0 0 1px #2a2520;
@@ -98,16 +98,16 @@
   .slot-window.drag-over {
     box-shadow:
       inset 0 4px 14px rgba(0,0,0,0.95),
-      inset 0 0 0 2px #d4883a,
-      0 0 0 2px #d4883a;
+      inset 0 0 0 2px #ffd23f,
+      0 0 0 3px #ffd23f;
   }
 
   .slot-hint {
     background: rgba(245, 232, 192, 0.15);
-    border: 1.5px dashed #a09070;
+    border: 1.5px dashed #ffd23f;
     border-radius: 8px;
     padding: clamp(8px, 1.2vw, 14px) clamp(14px, 2vw, 24px);
-    color: #f0e4c0;
+    color: #fff3b0;
     font-size: clamp(0.75rem, 1.3vw, 1rem);
     font-weight: 700;
     text-align: center;
@@ -120,9 +120,9 @@
     width: 100%;
     max-width: clamp(200px, 34vw, 340px);
     height: clamp(54px, 8.5vw, 78px);
-    background: linear-gradient(160deg, #3a2718, #1e100a);
+    background: linear-gradient(160deg, var(--cas, #ff5fa2), color-mix(in srgb, var(--cas, #ff5fa2) 65%, #000));
     border-radius: 7px;
-    border: 1.5px solid #6a4a32;
+    border: 1.5px solid rgba(255,255,255,0.5);
     position: relative;
     display: none;
   }
@@ -141,7 +141,7 @@
     left: clamp(10px, 1.5vw, 16px);
     right: clamp(10px, 1.5vw, 16px);
     height: clamp(22px, 3.5vw, 30px);
-    background: linear-gradient(135deg, #f5e8c0, #ddc870);
+    background: #fffdf5;
     border-radius: 3px;
     display: flex; align-items: center; justify-content: center;
     font-size: clamp(0.62rem, 1.1vw, 0.85rem);
@@ -167,12 +167,12 @@
   .slot-tape-win {
     flex: 1; max-width: clamp(36px, 5.5vw, 58px);
     height: clamp(10px, 1.5vw, 14px);
-    background: #080604; border: 1px solid #444; border-radius: 2px; margin: 0 4px;
+    background: #241a3a; border: 1px solid rgba(255,255,255,0.4); border-radius: 2px; margin: 0 4px;
   }
   .slot-notch {
     position: absolute; bottom: 0;
     width: clamp(8px, 1.2vw, 11px); height: clamp(8px, 1.2vw, 11px);
-    background: #1a1510;
+    background: #241a3a;
   }
   .slot-notch.l { left: 0; border-radius: 0 5px 0 0; }
   .slot-notch.r { right: 0; border-radius: 5px 0 0 0; }
@@ -182,7 +182,7 @@
     flex: 1;
     background: #000;
     border-radius: 6px;
-    border: 3px solid #a09890;
+    border: 3px solid #8338ec;
     overflow: hidden;
     position: relative;
     box-shadow: inset 0 2px 6px rgba(0,0,0,0.5);
@@ -192,9 +192,9 @@
 
   .screen-overlay {
     position: absolute; inset: 0;
-    background: #111;
+    background: linear-gradient(135deg, #2b1055 0%, #7597de 100%);
     display: flex; align-items: center; justify-content: center;
-    color: #444;
+    color: #e0d4ff;
     font-size: clamp(0.7rem, 1.2vw, 0.95rem);
     pointer-events: all;
     transition: opacity 0.3s;
@@ -205,9 +205,9 @@
   .transport {
     display: flex; gap: clamp(5px, 1vw, 12px);
     justify-content: center; flex-shrink: 0;
-    background: linear-gradient(180deg, #b8b2a8 0%, #a8a29a 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #ffe9f3 100%);
     border-radius: 8px;
-    border: 2px solid #9a9490;
+    border: 2px solid #ffb3d1;
     padding: clamp(7px, 1.2vw, 12px) clamp(10px, 1.8vw, 20px);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 4px rgba(0,0,0,0.2);
   }
@@ -219,29 +219,31 @@
     min-width: clamp(38px, 6.5vw, 56px);
     padding: 0 clamp(6px, 1.2vw, 14px);
     border-radius: 8px;
-    border: 1.5px solid #7a7470;
-    background: linear-gradient(180deg, #e0dbd2 0%, #c8c3ba 100%);
-    color: #2a2018;
+    --c1: #e0dbd2; --c2: #c8c3ba; --c3: #8a8480;
+    border: 1.5px solid var(--c3);
+    background: linear-gradient(180deg, var(--c1) 0%, var(--c2) 100%);
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
     font-size: clamp(1rem, 1.8vw, 1.4rem);
     cursor: pointer;
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 0 #8a8480, 0 5px 6px rgba(0,0,0,0.25);
-    transition: transform 0.1s, box-shadow 0.1s;
+    box-shadow: 0 4px 0 var(--c3), 0 5px 6px rgba(0,0,0,0.25);
+    transition: transform 0.1s, box-shadow 0.1s, filter 0.1s;
     font-family: inherit;
   }
-  .t-btn:hover { background: linear-gradient(180deg, #eae5dc 0%, #d5d0c8 100%); }
+  .t-btn:hover { filter: brightness(1.08); }
+  #btn-rw   { --c1: #6ec6ff; --c2: #3a86ff; --c3: #1e5bc6; }
+  #btn-stop { --c1: #ff8a8a; --c2: #ef476f; --c3: #b3264a; }
+  #btn-play { --c1: #7ee8a8; --c2: #2ec4b6; --c3: #1a8a80; }
+  #btn-ff   { --c1: #c49bff; --c2: #8338ec; --c3: #5a1fb0; }
   .t-btn:active {
     transform: translateY(3px);
-    box-shadow: 0 1px 0 #8a8480, 0 2px 3px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 0 var(--c3), 0 2px 3px rgba(0,0,0,0.2);
   }
-  .t-btn.on {
-    background: linear-gradient(180deg, #d4883a 0%, #b06820 100%);
-    border-color: #9a5818; color: #fff;
-    box-shadow: 0 4px 0 #7a4010, 0 5px 6px rgba(0,0,0,0.25);
-  }
+  #btn-play.on { --c1: #ffe066; --c2: #ff9f1c; --c3: #c46a00; }
   .t-label {
     font-size: clamp(0.52rem, 0.9vw, 0.72rem);
-    color: #5a5248;
+    color: #c2185b;
     font-weight: 700;
     white-space: nowrap;
   }
@@ -251,19 +253,21 @@
   ============================================= */
   .shelf-panel {
     flex: 2;
-    background: linear-gradient(180deg, #f5f0e6 0%, #ece5d8 100%);
+    background: linear-gradient(180deg, #e0f7fa 0%, #f3e5f5 50%, #fff3e0 100%);
     display: flex;
     flex-direction: column;
     padding: clamp(10px, 1.5vw, 16px);
     gap: clamp(8px, 1.2vw, 12px);
-    border-left: 1px solid #d8d0c4;
+    border-left: 1px solid #ffb3d1;
   }
 
   .shelf-header {
     text-align: center;
     font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 700;
-    color: #2a2018;
+    background: linear-gradient(90deg, #ef476f, #ff9f1c, #2ec4b6, #3a86ff, #8338ec);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
     letter-spacing: 0.25em;
     flex-shrink: 0;
   }
@@ -276,7 +280,7 @@
   }
   .shelf-list::-webkit-scrollbar { width: 5px; }
   .shelf-list::-webkit-scrollbar-track { background: transparent; }
-  .shelf-list::-webkit-scrollbar-thumb { background: #c8b898; border-radius: 3px; }
+  .shelf-list::-webkit-scrollbar-thumb { background: #c49bff; border-radius: 3px; }
 
   /* 棚のカセット（シンプル化、リールなし） */
   .shelf-item {
@@ -286,9 +290,9 @@
   .shelf-cassette {
     width: 100%;
     height: clamp(44px, 7vw, 64px);
-    background: linear-gradient(160deg, #3a2718, #241408);
+    background: linear-gradient(160deg, var(--cas, #ff5fa2), color-mix(in srgb, var(--cas, #ff5fa2) 70%, #000));
     border-radius: 7px;
-    border: 1.5px solid #6a4a32;
+    border: 1.5px solid rgba(255,255,255,0.6);
     box-shadow: 0 2px 8px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.06);
     display: flex;
     align-items: center;
@@ -300,11 +304,11 @@
     box-shadow: 0 6px 14px rgba(0,0,0,0.3);
   }
   .shelf-item.dragging .shelf-cassette { opacity: 0.25; }
-  .shelf-item.in-player .shelf-cassette { border-color: #d4883a; }
+  .shelf-item.in-player .shelf-cassette { border-color: #ffd23f; box-shadow: 0 0 0 3px #ffd23f, 0 2px 8px rgba(0,0,0,0.22); }
 
   .shelf-cas-label {
     flex: 1;
-    background: linear-gradient(135deg, #f5e8c0, #ddc870);
+    background: #fffdf5;
     border-radius: 4px;
     padding: clamp(5px, 0.8vw, 8px) clamp(8px, 1.2vw, 12px);
     font-size: clamp(0.82rem, 1.5vw, 1.1rem);
@@ -316,8 +320,8 @@
   .del-btn {
     margin-left: clamp(6px, 1vw, 10px);
     width: clamp(22px, 3.2vw, 28px); height: clamp(22px, 3.2vw, 28px);
-    border-radius: 50%; border: 1.5px solid #6a4a32;
-    background: rgba(0,0,0,0.3); color: #a08070;
+    border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.7);
+    background: rgba(0,0,0,0.2); color: #fff;
     font-size: clamp(0.55rem, 0.9vw, 0.75rem);
     cursor: pointer; display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
@@ -328,15 +332,15 @@
   .add-btn {
     width: 100%;
     padding: clamp(10px, 1.6vw, 15px);
-    border: 2px dashed #c8a878;
+    border: 2px dashed #8338ec;
     border-radius: 9px;
-    background: transparent; color: #8a6838;
+    background: rgba(255,255,255,0.6); color: #8338ec;
     font-size: clamp(0.85rem, 1.5vw, 1.05rem);
     font-family: inherit; font-weight: 700;
     cursor: pointer; flex-shrink: 0;
     transition: background 0.2s;
   }
-  .add-btn:hover { background: rgba(200,160,100,0.15); }
+  .add-btn:hover { background: rgba(131,56,236,0.12); }
 
   /* =============================================
      ドラッグゴースト
@@ -344,9 +348,9 @@
   .ghost {
     position: fixed; pointer-events: none; z-index: 500;
     width: 160px; height: 48px;
-    background: linear-gradient(160deg, #3a2718, #241408);
+    background: linear-gradient(160deg, var(--cas, #ff5fa2), color-mix(in srgb, var(--cas, #ff5fa2) 70%, #000));
     border-radius: 7px;
-    border: 1.5px solid #d4883a;
+    border: 1.5px solid #ffd23f;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     display: none; align-items: center; justify-content: center;
     padding: 6px 10px;
@@ -354,7 +358,7 @@
   }
   .ghost.show { display: flex; }
   .ghost-label {
-    background: linear-gradient(135deg, #f5e8c0, #ddc870);
+    background: #fffdf5;
     border-radius: 3px; padding: 3px 8px;
     font-size: 0.78rem; font-weight: 700; color: #2a1a10;
     max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
@@ -377,23 +381,23 @@
     box-shadow: 0 20px 60px rgba(0,0,0,0.4);
   }
   .dialog h2 { font-size: clamp(1.15rem, 2vw, 1.4rem); color: #2a1a10; margin-bottom: 18px; font-weight: 700; }
-  .dialog label { display: block; font-size: clamp(0.95rem, 1.5vw, 1.05rem); font-weight: 700; color: #5a3a20; margin-bottom: 6px; margin-top: 15px; }
+  .dialog label { display: block; font-size: clamp(0.95rem, 1.5vw, 1.05rem); font-weight: 700; color: #8338ec; margin-bottom: 6px; margin-top: 15px; }
   .dialog label:first-of-type { margin-top: 0; }
   .dialog input[type=text] {
     width: 100%; padding: 12px 14px;
-    border: 1.5px solid #e0c898; border-radius: 8px;
+    border: 1.5px solid #c49bff; border-radius: 8px;
     font-size: clamp(0.95rem, 1.5vw, 1.05rem); font-family: inherit; color: #2a1a10;
   }
-  .dialog input:focus { outline: none; border-color: #c8853a; }
+  .dialog input:focus { outline: none; border-color: #ff5fa2; }
   .d-error { font-size: clamp(0.85rem, 1.3vw, 0.95rem); color: #c04040; margin-top: 8px; min-height: 1.3em; }
   .d-btns { display: flex; gap: 10px; margin-top: 20px; }
   .d-ok {
     flex: 1; padding: 13px;
-    background: #c8853a; color: #fff;
+    background: linear-gradient(90deg, #ff5fa2, #8338ec); color: #fff;
     border: none; border-radius: 8px;
     font-size: clamp(0.95rem, 1.5vw, 1.05rem); font-family: inherit; font-weight: 700; cursor: pointer;
   }
-  .d-ok:hover { background: #a86020; }
+  .d-ok:hover { filter: brightness(1.1); }
   .d-cancel {
     padding: 13px 20px; background: transparent; color: #888;
     border: 1px solid #ddd; border-radius: 8px;
@@ -488,6 +492,13 @@
 </div>
 
 <script>
+// ── カセットの色（並び順で順番に割り当て） ──
+const CAS_COLORS = ['#ff5fa2', '#ff9f1c', '#2ec4b6', '#3a86ff', '#8338ec', '#ef476f', '#06d6a0', '#ffbe0b'];
+function casColor(item) {
+  const i = loadList().findIndex(c => c.id === item.id);
+  return CAS_COLORS[(i < 0 ? 0 : i) % CAS_COLORS.length];
+}
+
 // ── データ管理 ──
 const KEY = 'minyou_v4';
 function loadList() {
@@ -559,6 +570,7 @@ function setCassette(item) {
   document.getElementById('slot-hint').style.display = 'none';
   document.getElementById('slot-label').textContent = item.title;
   const cas = document.getElementById('slot-cassette');
+  cas.style.setProperty('--cas', casColor(item));
   cas.classList.remove('loaded');
   void cas.offsetWidth;
   cas.classList.add('loaded');
@@ -579,12 +591,13 @@ function renderShelf() {
   const list = loadList();
   const el = document.getElementById('shelf-list');
   el.innerHTML = '';
-  list.forEach(item => {
+  list.forEach((item, i) => {
     const div = document.createElement('div');
     div.className = 'shelf-item' + (loadedItem && loadedItem.id === item.id ? ' in-player' : '');
 
     const cas = document.createElement('div');
     cas.className = 'shelf-cassette';
+    cas.style.setProperty('--cas', CAS_COLORS[i % CAS_COLORS.length]);
 
     const label = document.createElement('div');
     label.className = 'shelf-cas-label';
@@ -633,6 +646,7 @@ function addDrag(el, item) {
     el.setPointerCapture(e.pointerId);
     el.classList.add('dragging');
     ghostLabel.textContent = item.title;
+    ghost.style.setProperty('--cas', casColor(item));
     ghost.classList.add('show');
     moveGhost(e.clientX, e.clientY);
   });
